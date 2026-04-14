@@ -58,10 +58,23 @@ public class CalculatorApp {
         // Calculate and output
         double totalValue = principalAmount * (Math.pow((1 + (interestRate / 365)), 365 * depositLength));
         double totalInterest = totalValue - principalAmount;
-        System.out.printf("If you deposit $%.2f in a CD that earns %.2f%% interest and matures in %d year(s), your CD's ending balance will be $%.2f and you would have earned $%.2f in interest", principalAmount, interestRate * 100, depositLength, totalValue, totalInterest);
+        System.out.printf("If you deposit $%.2f in a CD that earns %.3f%% interest and matures in %d year(s), your CD's ending balance will be $%.2f and you would have earned $%.2f in interest", principalAmount, interestRate * 100, depositLength, totalValue, totalInterest);
     }
     public static void calculatePresent(Scanner input){
+        // Prompt user for annuity information
+        println("What is your desired monthly payout?");
+        double monthlyPay = input.nextDouble();
 
+        println("What is the expected interest rate (x.xxx%)");
+        double interestRate = input.nextDouble();
+
+        println("How many years would you like to be paid out?");
+        int payoutLength = input.nextInt();
+
+        // Calculate Present Value
+        double initialDeposit = ((monthlyPay * 12) * payoutLength);
+
+        println("|| UNDER CONSTRUCTION ||");
     }
     public static void println(String message){
         System.out.println(message);
