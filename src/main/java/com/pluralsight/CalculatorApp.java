@@ -72,9 +72,8 @@ public class CalculatorApp {
         int payoutLength = input.nextInt();
 
         // Calculate Present Value
-        double initialDeposit = ((monthlyPay * 12) * payoutLength);
-
-        println("|| UNDER CONSTRUCTION ||");
+        double initialDeposit = monthlyPay * ((1-(Math.pow(1 + (interestRate / 1200),-(12 * payoutLength)))) / (interestRate / 1200));
+        System.out.printf("To fund an annuity that pays $%.2f monthly for %d year(s) and earns an expected %.3f%% interest, you would need to invest $%.2f today", monthlyPay, payoutLength, interestRate, initialDeposit);
     }
     public static void println(String message){
         System.out.println(message);
